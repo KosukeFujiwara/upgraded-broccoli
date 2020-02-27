@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import datetime
+import requests
+
+URL = 'http://feeds.feedburner.com/hatena/b/hotentry'
+
+def bookmarks(event, context):
+    s = requests.Session()
+
+    r = s.get(URL)
+    print(r.text)
+
+# call lambda_handler
+if __name__ == "__main__":
+    bookmarks({}, {})
